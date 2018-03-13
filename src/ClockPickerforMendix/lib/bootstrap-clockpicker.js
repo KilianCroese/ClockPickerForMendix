@@ -120,7 +120,7 @@ define([], function () {
                     this.spanHours = popover.find('.clockpicker-span-hours');
                     this.spanMinutes = popover.find('.clockpicker-span-minutes');
                     this.spanAmPm = popover.find('.clockpicker-span-am-pm');
-                    this.amOrPm = "PM";
+                    this.amOrPm = "AM";
                     
                     // Setup for for 12 hour clock if option is selected
                     if (options.twelvehour) {
@@ -473,6 +473,11 @@ define([], function () {
                         } else {
                             this.hours = 0;
                             this.minutes = 0;
+			    if(this.options.twelvehour) {
+				    this.amOrPm = "AM";
+			    } else {
+				this.amOrPm = "";
+			    }
                         }
                     }
 
